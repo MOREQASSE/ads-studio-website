@@ -10,6 +10,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+    <script src="assets/scripts/navigation.js"></script>
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/styles/base.css">
     <link rel="stylesheet" href="assets/styles/contact.css">
@@ -20,10 +21,22 @@
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-2xl font-bold gold-text">Ads-Studio</div>
             <nav class="hidden md:flex space-x-8">
-                <a href="index.html" class="hover:text-gold smooth-transition px-3 py-2 rounded-md font-medium">Accueil</a>
-                <a href="services.html" class="hover:text-gold smooth-transition px-3 py-2 rounded-md font-medium">Services</a>
-                <a href="portfolio.html" class="hover:text-gold smooth-transition px-3 py-2 rounded-md font-medium">Portfolio</a>
-                <a href="contact.html" class="text-gold smooth-transition px-3 py-2 rounded-md font-semibold border-b-2 border-gold">Contact</a>
+                <a href="index.html">
+                    <i data-feather="home" class="w-4 h-4"></i>
+                    <span>Accueil</span>
+                </a>
+                <a href="services.html">
+                    <i data-feather="layers" class="w-4 h-4"></i>
+                    <span>Services</span>
+                </a>
+                <a href="portfolio.html">
+                    <i data-feather="image" class="w-4 h-4"></i>
+                    <span>Portfolio</span>
+                </a>
+                <a href="contact.html" class="border-gold">
+                    <i data-feather="mail" class="w-4 h-4"></i>
+                    <span>Contact</span>
+                </a>
             </nav>
             <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
                 <i data-feather="menu" class="w-6 h-6"></i>
