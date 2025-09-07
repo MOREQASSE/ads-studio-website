@@ -13,6 +13,10 @@
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/styles/base.css">
     <link rel="stylesheet" href="assets/styles/portfolio.css">
+    <link rel="stylesheet" href="assets/styles/portfolio-hero.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body class="dark-bg text-white">
     <!-- Header -->
@@ -68,16 +72,59 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="h-screen flex items-center justify-center relative">
-        <div class="text-center px-4">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4" data-aos="fade-up">Notre Portfolio</h1>
-            <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Découvrez nos réalisations et laissez-vous inspirer par notre travail créatif.</p>
+    <!-- Premium Hero Section -->
+    <section class="hero-portfolio">
+        <!-- Animated Background Elements -->
+        <div class="floating-element floating-1"></div>
+        <div class="floating-element floating-2"></div>
+        
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                    Notre Portfolio
+                </h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                    Découvrez nos réalisations exceptionnelles et laissez-vous inspirer par notre travail créatif. 
+                    Chaque projet raconte une histoire unique d'innovation et d'excellence.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mt-8" data-aos="fade-up" data-aos-delay="300">
+                    <a href="#portfolio" class="group relative px-8 py-3.5 overflow-hidden font-bold rounded-full transition-all duration-300 transform hover:-translate-y-1">
+                        <!-- Gold gradient background -->
+                        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-amber-400 via-gold to-amber-500 group-hover:from-amber-500 group-hover:to-amber-400 transition-all duration-500"></span>
+                        
+                        <!-- Shine effect on hover -->
+                        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-amber-200/30 via-amber-100/50 to-amber-200/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></span>
+                        
+                        <!-- Text -->
+                        <span class="relative z-10 flex items-center justify-center gap-2 font-semibold tracking-wide">
+                            <i data-feather="eye" class="w-5 h-5"></i>
+                            Explorer les projets
+                        </span>
+                        
+                        <!-- Animated border -->
+                        <span class="absolute inset-0 rounded-full p-0.5 bg-gradient-to-r from-amber-200 via-gold to-amber-200 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <span class="absolute inset-0.5 bg-gradient-to-br from-gray-900 to-gray-800 rounded-full -z-10"></span>
+                        </span>
+                        
+                        <!-- Shadow on hover -->
+                        <span class="absolute inset-0 rounded-full shadow-lg shadow-amber-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                    </a>
+                    <a href="contact.html" class="px-8 py-3 border-2 border-gold text-gold font-bold rounded-full hover:bg-gold hover:bg-opacity-10 transition-all duration-300 transform hover:-translate-y-1">
+                        Discutons de votre projet
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="hero-scroll-indicator" data-aos="fade-up" data-aos-delay="500">
+            Scroll
         </div>
     </section>
 
     <!-- Portfolio Grid -->
-    <section class="py-20 px-4">
+    <section id="portfolio" class="py-20 px-4 scroll-mt-20">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Projet 1 -->
@@ -120,24 +167,143 @@
                         <p class="text-gray-300">Application mobile & Solution digitale</p>
                     </div>
                 </div>
-                <!-- Projet 6 -->
-                <div class="portfolio-item rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="500">
-                    <img src="http://static.photos/travel/640x360/6" alt="Projet 6" class="w-full h-64 object-cover">
-                    <div class="portfolio-overlay">
-                        <h3 class="text-2xl font-bold mb-2">Projet Innovant</h3>
-                        <p>Application interactive & expérience utilisateur</p>
+                <!-- CTA Card -->
+                <div class="portfolio-item rounded-xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-full h-full bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 p-6 flex flex-col items-center justify-center text-center relative overflow-hidden">
+                        <!-- Decorative Elements -->
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-gold/5 rounded-full -mr-12 -mt-12 group-hover:bg-gold/10 transition-all duration-700"></div>
+                        <div class="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/5 rounded-full -ml-16 -mb-16 group-hover:bg-blue-500/10 transition-all duration-700"></div>
+                        
+                        <!-- Animated Border -->
+                        <div class="absolute inset-0.5 bg-gradient-to-br from-gold/0 via-gold/10 to-gold/0 rounded-xl group-hover:opacity-100 opacity-0 transition-opacity duration-500"></div>
+                        
+                        <!-- Content Container -->
+                        <div class="relative z-10">
+                            <!-- Icon -->
+                            <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-gold/10 to-amber-600/10 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:rotate-12 transition-all duration-500">
+                                <div class="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-gold/20 to-amber-600/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                    <i data-feather="award" class="w-6 h-6 md:w-8 md:h-8 text-gold group-hover:scale-110 transition-transform duration-500"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Content -->
+                            <h3 class="text-xl md:text-2xl font-bold text-white mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gold to-amber-300">Votre Prochain Succès</h3>
+                            <p class="text-sm md:text-base text-gray-300 mb-4 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">Rejoignez nos partenaires de confiance</p>
+                            
+                            <!-- Enhanced Button -->
+                            <a href="contact.html" class="relative inline-flex items-center justify-center px-5 py-2.5 md:px-7 md:py-3 overflow-hidden font-bold text-black rounded-full group transition-all duration-400 transform hover:-translate-y-0.5 text-sm md:text-base hover:shadow-[0_10px_25px_-5px_rgba(245,158,11,0.3)]">
+                                <!-- Main gradient layer -->
+                                <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-amber-400 via-gold to-amber-500 bg-[length:200%_auto] group-hover:animate-shine"></span>
+                                
+                                <!-- Shine effect on hover -->
+                                <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-amber-200/30 via-amber-100/50 to-amber-200/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></span>
+                                
+                                <!-- Text and icon -->
+                                <span class="relative z-10 flex items-center gap-2 font-semibold tracking-wide">
+                                    <i data-feather="message-circle" class="w-4 h-4 md:w-5 md:h-5"></i>
+                                    Nous contacter
+                                </span>
+                                
+                                <!-- Animated border -->
+                                <span class="absolute inset-0 rounded-full p-0.5 bg-gradient-to-r from-amber-200 via-gold to-amber-200 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                    <span class="absolute inset-0.5 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 rounded-full -z-10"></span>
+                                </span>
+                            </a>
+                        </div>
+                        
+                        <!-- Decorative Dots -->
+                        <div class="absolute top-3 right-3 flex space-x-1.5">
+                            <span class="w-1.5 h-1.5 md:w-2 md:h-2 bg-gold rounded-full block animate-pulse" style="animation-delay: 0s"></span>
+                            <span class="w-1.5 h-1.5 md:w-2 md:h-2 bg-blue-400 rounded-full block animate-pulse" style="animation-delay: 0.2s"></span>
+                            <span class="w-1.5 h-1.5 md:w-2 md:h-2 bg-emerald-400 rounded-full block animate-pulse" style="animation-delay: 0.4s"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- Our Creative Process -->
     <section class="py-20 px-4 bg-gray-900">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Vous avez un projet en tête ?</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Faites confiance à notre expertise pour concrétiser vos idées les plus ambitieuses.</p>
-            <a href="contact.html" class="bg-gold text-black px-8 py-3 rounded-full font-bold hover:bg-opacity-90 smooth-transition" data-aos="fade-up" data-aos-delay="400">Contactez-nous</a>
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-1 mb-4 text-sm font-semibold tracking-wider text-gold uppercase rounded-full bg-gold/10">Notre Approche</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Notre Processus Créatif</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Découvrez comment nous transformons les idées en expériences numériques exceptionnelles</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8 relative">
+                <!-- Timeline line -->
+                <div class="hidden md:block absolute top-12 left-1/2 h-1 bg-gradient-to-r from-gray-700 via-gray-600 to-gray-700 w-4/5 -translate-x-1/2"></div>
+                
+                <!-- Step 1 -->
+                <div class="relative z-10" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center border-2 border-gold/20 group-hover:border-gold/50 transition-all duration-300">
+                        <div class="w-20 h-20 bg-gradient-to-br from-gold/10 to-amber-600/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <i data-feather="search" class="w-8 h-8 text-gold"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Découverte</h3>
+                    <p class="text-gray-400 text-center text-sm">Nous écoutons vos besoins et analysons votre marché pour définir une stratégie gagnante.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center border-2 border-gold/20 group-hover:border-gold/50 transition-all duration-300">
+                        <div class="w-20 h-20 bg-gradient-to-br from-gold/10 to-amber-600/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <i data-feather="layout" class="w-8 h-8 text-gold"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Conception</h3>
+                    <p class="text-gray-400 text-center text-sm">Nos designers créent des maquettes uniques qui reflètent votre identité de marque.</p>
+                </div>
+
+                <!-- Step 3 - Développement -->
+                <div class="relative z-10" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center border-2 border-gold/20 group-hover:border-gold/50 transition-all duration-300">
+                        <div class="w-20 h-20 bg-gradient-to-br from-gold/10 to-amber-600/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <i data-feather="code" class="w-8 h-8 text-gold"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Développement</h3>
+                    <p class="text-gray-400 text-center text-sm">Nos développeurs donnent vie à votre projet avec un code propre et optimisé.</p>
+                </div>
+
+                <!-- Step 4 - Lancement -->
+                <div class="relative z-10" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-gray-800 to-gray-900 rounded-full flex items-center justify-center border-2 border-gold/20 group-hover:border-gold/50 transition-all duration-300">
+                        <div class="w-20 h-20 bg-gradient-to-br from-gold/10 to-amber-600/10 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <i data-feather="send" class="w-8 h-8 text-gold"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Lancement</h3>
+                    <p class="text-gray-400 text-center text-sm">Nous assurons un déploiement fluide et un suivi post-lancement optimal.</p>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="500">
+                <a href="contact.html" class="group relative inline-flex items-center px-8 py-3.5 overflow-hidden font-bold rounded-full transition-all duration-300 transform hover:-translate-y-0.5">
+                    <!-- Gold gradient background -->
+                    <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-amber-400 via-gold to-amber-500 group-hover:from-amber-500 group-hover:to-amber-400 transition-all duration-500"></span>
+                    
+                    <!-- Shine effect on hover -->
+                    <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-amber-200/30 via-amber-100/50 to-amber-200/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></span>
+                    
+                    <!-- Text and icon -->
+                    <span class="relative z-10 flex items-center gap-2 font-semibold tracking-wide">
+                        <i data-feather="message-circle" class="w-5 h-5"></i>
+                        Discutons de votre projet
+                    </span>
+                    
+                    <!-- Animated border -->
+                    <span class="absolute inset-0 rounded-full p-0.5 bg-gradient-to-r from-amber-200 via-gold to-amber-200 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span class="absolute inset-0.5 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 rounded-full -z-10"></span>
+                    </span>
+                    
+                    <!-- Shadow on hover -->
+                    <span class="absolute inset-0 rounded-full shadow-lg shadow-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -153,7 +319,7 @@
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">
                             <i data-feather="facebook" class="w-5 h-5"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <a href="https://www.instagram.com/ads.studio1/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors">
                             <i data-feather="instagram" class="w-5 h-5"></i>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">

@@ -1,6 +1,12 @@
 /* Base Styles */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for fixed header */
+}
+
 /* Global Styles */
 body {
     font-family: 'Montserrat', sans-serif;
