@@ -1,0 +1,130 @@
+/* Mobile-specific styles for better mobile experience */
+
+/* Base mobile styles */
+@media (max-width: 768px) {
+    /* Service card layout */
+    .service-card {
+        flex-direction: column;
+        padding: 1.5rem 1rem;
+    }
+
+    .service-content {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .service-visual {
+        width: 100%;
+        height: 60vh;
+        min-height: 400px;
+        margin-top: 1.5rem;
+    }
+
+    /* 3D Model Container */
+    .model-container {
+        height: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    /* Model info card */
+    .model-info-card {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        max-width: calc(100% - 2rem);
+    }
+
+    /* Hide desktop-specific elements */
+    .desktop-only {
+        display: none !important;
+    }
+
+    /* Touch-friendly buttons */
+    .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    /* Adjust typography for mobile */
+    h2 {
+        font-size: 1.75rem;
+        line-height: 1.2;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Mobile menu styles */
+    #mobile-menu {
+        width: 85%;
+        max-width: 320px;
+    }
+
+    /* Service list items */
+    .service-features li {
+        margin-bottom: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    /* Visual elements spacing */
+    .visual-element {
+        margin: 1.5rem 0;
+    }
+
+    /* Ensure 3D cube is properly sized */
+    .model-viewer {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Adjust info panel */
+    .info-panel {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    /* Slider controls */
+    .slider-controls {
+        bottom: 1.5rem;
+    }
+
+    .control-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .control-dot.active {
+        width: 24px;
+    }
+}
+
+/* Larger mobile devices */
+@media (min-width: 481px) and (max-width: 768px) {
+    .service-visual {
+        height: 70vh;
+    }
+}
+
+/* Smaller mobile devices */
+@media (max-width: 480px) {
+    .service-visual {
+        height: 50vh;
+        min-height: 350px;
+    }
+    
+    .model-info-card {
+        padding: 0.75rem;
+    }
+    
+    .model-info h4 {
+        font-size: 0.9rem;
+    }
+    
+    .model-stats span {
+        font-size: 0.8rem;
+    }
+}
