@@ -10,22 +10,26 @@ window.addEventListener('load', function() {
 if (document.getElementById('vanta')) {
     const isMobile = window.innerWidth <= 768; // Check if mobile device
     
-    const vantaEffect = VANTA.NET({
+        const vantaEffect = VANTA.NET({
         el: "#vanta",
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        minHeight: isMobile ? 100.00 : 200.00,
-        minWidth: isMobile ? 100.00 : 200.00,
-        scale: isMobile ? 0.8 : 1.00,
-        scaleMobile: isMobile ? 0.8 : 1.00,
+        minHeight: isMobile ? 150.00 : 200.00,  // Increased minimum height for mobile
+        minWidth: isMobile ? 150.00 : 200.00,   // Increased minimum width for mobile
+        scale: isMobile ? 1.2 : 1.00,           // Slightly larger scale for mobile
+        scaleMobile: isMobile ? 1.2 : 1.00,     // Slightly larger scale for mobile
         color: 0xd4af37,
-        backgroundColor: 0x0,
-        points: isMobile ? 8.00 : 12.00,
-        maxDistance: isMobile ? 20.00 : 25.00,
-        spacing: isMobile ? 15.00 : 18.00,
+        backgroundColor: 0x0a0a0a,              // Consistent background color
+        points: isMobile ? 7.00 : 12.00,        // Fewer points on mobile for better performance
+        maxDistance: isMobile ? 25.00 : 30.00,  // Increased max distance for better spacing
+        spacing: isMobile ? 20.00 : 22.00,      // Increased spacing between points
         color2: 0x00b4d8,
-        backgroundColor: 0x0a0a0a
+        showDots: !isMobile,                    // Hide dots on mobile for cleaner look
+        pointSize: isMobile ? 0.8 : 1.2,        // Slightly smaller points on mobile
+        lineColor: isMobile ? 0x3a3a3a : 0x4a4a4a, // Slightly darker lines on mobile
+        maxDistance: isMobile ? 22.00 : 28.00,  // Slightly reduced connection distance on mobile
+        showLine: true
     });
     
     // Handle window resize
@@ -36,13 +40,17 @@ if (document.getElementById('vanta')) {
             const newIsMobile = window.innerWidth <= 768;
             if (vantaEffect) {
                 vantaEffect.setOptions({
-                    minHeight: newIsMobile ? 100.00 : 200.00,
-                    minWidth: newIsMobile ? 100.00 : 200.00,
-                    scale: newIsMobile ? 0.8 : 1.00,
-                    scaleMobile: newIsMobile ? 0.8 : 1.00,
-                    points: newIsMobile ? 8.00 : 12.00,
-                    maxDistance: newIsMobile ? 20.00 : 25.00,
-                    spacing: newIsMobile ? 15.00 : 18.00
+                    minHeight: newIsMobile ? 150.00 : 200.00,
+                    minWidth: newIsMobile ? 150.00 : 200.00,
+                    scale: newIsMobile ? 1.2 : 1.00,
+                    scaleMobile: newIsMobile ? 1.2 : 1.00,
+                    points: newIsMobile ? 7.00 : 12.00,
+                    maxDistance: newIsMobile ? 22.00 : 28.00,
+                    spacing: newIsMobile ? 20.00 : 22.00,
+                    showDots: !newIsMobile,
+                    pointSize: newIsMobile ? 0.8 : 1.2,
+                    lineColor: newIsMobile ? 0x3a3a3a : 0x4a4a4a,
+                    showLine: true
                 });
             }
         }, 250);
