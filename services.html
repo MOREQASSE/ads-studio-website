@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services - Ads-Studio Agency</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/styles/base.css">
+    <link rel="stylesheet" href="assets/styles/services.css">
+</head>
+<body class="dark-bg text-white">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-black bg-opacity-70 backdrop-blur-sm py-4 px-6 smooth-transition">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold gold-text">Ads-Studio</div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-gold smooth-transition px-3 py-2 rounded-md font-medium">Accueil</a>
+                <a href="services.html" class="text-gold smooth-transition px-3 py-2 rounded-md font-semibold border-b-2 border-gold">Services</a>
+                <a href="portfolio.html" class="hover:text-gold smooth-transition px-3 py-2 rounded-md font-medium">Portfolio</a>
+                <a href="contact.html" class="hover:text-gold smooth-transition px-3 py-2 rounded-md font-medium">Contact</a>
+            </nav>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-95 z-40 backdrop-blur-sm">
+            <div class="container mx-auto px-6 py-4 flex flex-col items-end">
+                <button id="close-menu" class="text-white mb-8">
+                    <i data-feather="x" class="w-6 h-6"></i>
+                </button>
+                <div class="flex flex-col items-center w-full space-y-6">
+                    <a href="index.html" class="text-2xl hover:text-gold smooth-transition">Accueil</a>
+                    <a href="services.html" class="text-2xl text-gold smooth-transition font-semibold">Services</a>
+                    <a href="portfolio.html" class="text-2xl hover:text-gold smooth-transition">Portfolio</a>
+                    <a href="contact.html" class="text-2xl hover:text-gold smooth-transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="h-screen flex items-center justify-center relative">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4" data-aos="fade-up">Nos Services</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Découvrez l'ensemble de nos expertises pour propulser votre marque vers de nouveaux horizons.</p>
+        </div>
+    </section>
+
+    <!-- Services détaillés -->
+    <section class="py-20 px-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-4">Stratégie de marque & création d’identité visuelle</h2>
+                    <p class="text-lg mb-6">Nous élaborons des récits de marque uniques et des identités visuelles mémorables qui différencient votre entreprise sur le marché.</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Conception de logos et chartes graphiques</li>
+                        <li>Développement de storytelling de marque</li>
+                        <li>Création d'identités visuelles cohérentes</li>
+                    </ul>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="http://static.photos/abstract/640x360/1" alt="Stratégie de marque" class="rounded-xl">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+                <div data-aos="fade-right" class="md:order-2">
+                    <img src="http://static.photos/technology/640x360/2" alt="Marketing digital" class="rounded-xl">
+                </div>
+                <div data-aos="fade-left" class="md:order-1">
+                    <h2 class="text-3xl font-bold mb-4">Marketing digital & campagnes publicitaires</h2>
+                    <p class="text-lg mb-6">Nos stratégies digitales basées sur l'analyse de données génèrent des résultats tangibles pour votre entreprise.</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Gestion des réseaux sociaux</li>
+                        <li>Création de campagnes publicitaires ciblées</li>
+                        <li>Analyse et optimisation des performances</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-4">Conception & développement web</h2>
+                    <p class="text-lg mb-6">Nous créons des sites web fluides, intuitifs et captivants qui convertissent vos visiteurs en clients.</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Sites vitrines et e-commerce</li>
+                        <li>Design responsive et UX/UI</li>
+                        <li>Développement sur mesure</li>
+                    </ul>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="http://static.photos/workspace/640x360/3" alt="Développement web" class="rounded-xl">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
+                <div data-aos="fade-right" class="md:order-2">
+                    <img src="http://static.photos/abstract/640x360/4" alt="Motion design" class="rounded-xl">
+                </div>
+                <div data-aos="fade-left" class="md:order-1">
+                    <h2 class="text-3xl font-bold mb-4">Motion design & production vidéo</h2>
+                    <p class="text-lg mb-6">Nos contenus animés et vidéos promotionnelles captivent votre audience avec un style créatif unique.</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Animations explicatives</li>
+                        <li>Vidéos promotionnelles</li>
+                        <li>Contenu social media dynamique</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold mb-4">Modélisation 3D & expériences interactives</h2>
+                    <p class="text-lg mb-6">Plongez votre audience dans des expériences immersives grâce à nos visuels 3D et technologies VR/AR.</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Modélisation 3D de produits</li>
+                        <li>Expériences de réalité virtuelle</li>
+                        <li>Applications interactives innovantes</li>
+                    </ul>
+                </div>
+                <div data-aos="fade-left">
+                    <img src="http://static.photos/technology/640x360/5" alt="3D & VR" class="rounded-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 px-4 bg-gray-900">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Prêt à transformer votre marque ?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Contactez-nous pour discuter de votre projet et découvrir comment nous pouvons vous aider à atteindre vos objectifs.</p>
+            <a href="contact.html" class="bg-gold text-black px-8 py-3 rounded-full font-bold hover:bg-opacity-90 smooth-transition" data-aos="fade-up" data-aos-delay="400">Discutons de votre projet</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 px-4 bg-black">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Ads-Studio Agency. Tous droits réservés.</p>
+            <div class="mt-4">
+                <a href="#" class="mx-2 hover:gold-text smooth-transition">Mentions légales</a>
+                <a href="#" class="mx-2 hover:gold-text smooth-transition">Politique de confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>

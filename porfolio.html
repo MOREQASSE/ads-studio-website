@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ads-Studio Agency</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/styles/base.css">
+    <link rel="stylesheet" href="assets/styles/portfolio.css">
+</head>
+<body class="dark-bg text-white">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-black bg-opacity-70 backdrop-blur-sm py-4 px-6 smooth-transition">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold gold-text">Ads-Studio</div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-gold smooth-transition px-3 py-2 rounded-md font-medium">Accueil</a>
+                <a href="services.html" class="hover:text-gold smooth-transition px-3 py-2 rounded-md font-medium">Services</a>
+                <a href="portfolio.html" class="text-gold smooth-transition px-3 py-2 rounded-md font-semibold border-b-2 border-gold">Portfolio</a>
+                <a href="contact.html" class="hover:text-gold smooth-transition px-3 py-2 rounded-md font-medium">Contact</a>
+            </nav>
+            <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-95 z-40 backdrop-blur-sm">
+            <div class="container mx-auto px-6 py-4 flex flex-col items-end">
+                <button id="close-menu" class="text-white mb-8">
+                    <i data-feather="x" class="w-6 h-6"></i>
+                </button>
+                <div class="flex flex-col items-center w-full space-y-6">
+                    <a href="index.html" class="text-2xl hover:text-gold smooth-transition">Accueil</a>
+                    <a href="services.html" class="text-2xl hover:text-gold smooth-transition">Services</a>
+                    <a href="portfolio.html" class="text-2xl text-gold smooth-transition font-semibold">Portfolio</a>
+                    <a href="contact.html" class="text-2xl hover:text-gold smooth-transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="h-screen flex items-center justify-center relative">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4" data-aos="fade-up">Notre Portfolio</h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Découvrez nos réalisations et laissez-vous inspirer par notre travail créatif.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="py-20 px-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projet 1 -->
+                <div class="portfolio-item rounded-xl overflow-hidden" data-aos="fade-up">
+                    <img src="http://static.photos/nature/640x360/1" alt="Projet 1" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-2xl font-bold mb-2">Kitea Maroc</h3>
+                        <p>Identité visuelle & campagne digitale</p>
+                    </div>
+                </div>
+                <!-- Projet 2 -->
+                <div class="portfolio-item rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <img src="http://static.photos/cityscape/640x360/2" alt="Projet 2" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-2xl font-bold mb-2">Sanili</h3>
+                        <p>Site e-commerce & stratégie SEO</p>
+                    </div>
+                </div>
+                <!-- Projet 3 -->
+                <div class="portfolio-item rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/office/640x360/3" alt="Projet 3" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-2xl font-bold mb-2">Cartoncom</h3>
+                        <p>Motion design & vidéo promotionnelle</p>
+                    </div>
+                </div>
+                <!-- Projet 4 -->
+                <div class="portfolio-item rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <img src="http://static.photos/technology/640x360/4" alt="Projet 4" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-2xl font-bold mb-2">Marostone</h3>
+                        <p>Modélisation 3D & réalité virtuelle</p>
+                    </div>
+                </div>
+                <!-- Projet 5 -->
+                <div class="portfolio-item rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <img src="http://static.photos/people/640x360/5" alt="Projet 5" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-2xl font-bold mb-2">Tanger Med Port</h3>
+                        <p>Identité de marque & communication institutionnelle</p>
+                    </div>
+                </div>
+                <!-- Projet 6 -->
+                <div class="portfolio-item rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                    <img src="http://static.photos/travel/640x360/6" alt="Projet 6" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-2xl font-bold mb-2">Projet Innovant</h3>
+                        <p>Application interactive & expérience utilisateur</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 px-4 bg-gray-900">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Vous avez un projet en tête ?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Faites confiance à notre expertise pour concrétiser vos idées les plus ambitieuses.</p>
+            <a href="contact.html" class="bg-gold text-black px-8 py-3 rounded-full font-bold hover:bg-opacity-90 smooth-transition" data-aos="fade-up" data-aos-delay="400">Contactez-nous</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 px-4 bg-black">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 Ads-Studio Agency. Tous droits réservés.</p>
+            <div class="mt-4">
+                <a href="#" class="mx-2 hover:gold-text smooth-transition">Mentions légales</a>
+                <a href="#" class="mx-2 hover:gold-text smooth-transition">Politique de confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>

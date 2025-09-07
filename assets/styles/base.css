@@ -1,0 +1,76 @@
+/* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Color Classes */
+.gold-text {
+    color: #D4AF37;
+}
+
+.electric-blue-text {
+    color: #00B4D8;
+}
+
+.dark-bg {
+    background-color: #0A0A0A;
+}
+
+/* Transitions */
+.smooth-transition {
+    transition: all 0.4s ease;
+}
+
+/* Hover Effects */
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Header Styles */
+header {
+    transition: all 0.3s ease;
+}
+
+/* Footer Styles */
+footer a:hover {
+    color: #D4AF37;
+}
+
+/* Form Elements */
+input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #1F2937;
+    border: 1px solid #374151;
+    border-radius: 0.375rem;
+    color: white;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #D4AF37;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+/* Buttons */
+button, .btn {
+    transition: all 0.3s ease;
+}
+
+button:focus, .btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
