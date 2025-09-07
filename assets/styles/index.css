@@ -357,3 +357,155 @@ margin-bottom: 0;
 .bg-electric-gradient {
     background: linear-gradient(135deg, var(--electric-blue) 0%, #0096C7 100%);
 }
+/* Orbit Animation */
+@keyframes orbit {
+    from { transform: rotate(var(--start-angle)) translateX(calc(var(--orbit-radius) / 1.5)) rotate(calc(-1 * var(--start-angle))); }
+    to { transform: rotate(calc(360deg + var(--start-angle))) translateX(calc(var(--orbit-radius) / 1.5)) rotate(calc(-360deg - var(--start-angle))); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  /* Feature Orb Styles */
+  .orbit-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: orbit var(--orbit-speed, 40s) linear infinite;
+    animation-play-state: running;
+    transform-origin: center;
+  }
+  
+  .feature-orb {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .feature-orb::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(0, 180, 216, 0.3));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .feature-orb:hover::before {
+    opacity: 1;
+  }
+  
+  .feature-orb:hover {
+    transform: scale(1.1) translateZ(0);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  }
+  
+  .feature-content {
+    text-align: center;
+    padding: 2rem;
+    transition: all 0.4s ease;
+  }
+  
+  .feature-content .icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+  }
+  
+  .feature-orb:hover .icon-wrapper {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .orbit-item {
+      position: static;
+      animation: none;
+      margin: 2rem auto;
+      max-width: 300px;
+    }
+  
+    .feature-orb {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      padding: 1.5rem;
+    }
+  
+    .feature-content p {
+      opacity: 1 !important;
+    }
+  }
+  
+  /* Animation delay utilities */
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+  
+  .animation-delay-1500 {
+    animation-delay: 1500ms;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2000ms;
+  }
+  
+  /* Hover effect for mobile tap */
+  @media (hover: none) {
+    .feature-orb:active {
+      transform: scale(0.95);
+    }
+  }
+  
+  /* Accessibility focus styles */
+  .feature-orb:focus-visible {
+    outline: 3px solid var(--electric-blue);
+    outline-offset: 3px;
+  }
+  
+  /* Smooth scroll behavior for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Performance optimizations */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
