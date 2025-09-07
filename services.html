@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="assets/styles/base.css">
     <link rel="stylesheet" href="assets/styles/services.css">
 </head>
-<body class="dark-bg text-white">
+<body class="dark-bg text-white overflow-x-hidden">
     <!-- Header -->
     <header class="fixed w-full z-50 bg-black bg-opacity-70 backdrop-blur-sm py-4 px-6 smooth-transition">
         <div class="container mx-auto flex justify-between items-center">
@@ -69,104 +69,341 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="h-screen flex items-center justify-center relative">
-        <div class="text-center px-4">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4" data-aos="fade-up">Nos Services</h1>
-            <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Découvrez l'ensemble de nos expertises pour propulser votre marque vers de nouveaux horizons.</p>
+    <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#0a0e14] to-[#0a1a2a]">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-1/4 -left-20 w-60 h-60 bg-gold rounded-full mix-blend-soft-light filter blur-3xl"></div>
+            <div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-electric-blue rounded-full mix-blend-soft-light filter blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <span class="inline-block px-4 py-1 mb-6 text-sm font-semibold tracking-wider text-gold uppercase rounded-full bg-gold/10" data-aos="fade-up">Nos Expertises</span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300" data-aos="fade-up">
+                Nos Services Premium
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">
+                Des solutions créatives sur mesure pour propulser votre marque vers de nouveaux sommets
+            </p>
+            <div class="flex flex-wrap justify-center gap-6 mt-12" data-aos="fade-up" data-aos-delay="200">
+                <a href="#branding" class="px-6 py-3 rounded-full border border-gold/30 text-gold hover:bg-gold/10 transition-all duration-300 flex items-center">
+                    <i data-feather="award" class="w-5 h-5 mr-2"></i>
+                    Branding
+                </a>
+                <a href="#digital" class="px-6 py-3 rounded-full border border-electric-blue/30 text-electric-blue hover:bg-electric-blue/10 transition-all duration-300 flex items-center">
+                    <i data-feather="bar-chart-2" class="w-5 h-5 mr-2"></i>
+                    Digital
+                </a>
+                <a href="#creation" class="px-6 py-3 rounded-full border border-purple-400/30 text-purple-400 hover:bg-purple-400/10 transition-all duration-300 flex items-center">
+                    <i data-feather="film" class="w-5 h-5 mr-2"></i>
+                    Création
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce" data-aos="fade-up" data-aos-delay="400">
+            <i data-feather="chevron-down" class="w-8 h-8 text-gray-400"></i>
         </div>
     </section>
 
     <!-- Services détaillés -->
-    <section class="py-20 px-4">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-                <div data-aos="fade-right">
-                    <h2 class="text-3xl font-bold mb-4">Stratégie de marque & création d’identité visuelle</h2>
-                    <p class="text-lg mb-6">Nous élaborons des récits de marque uniques et des identités visuelles mémorables qui différencient votre entreprise sur le marché.</p>
-                    <ul class="list-disc pl-6 space-y-2">
-                        <li>Conception de logos et chartes graphiques</li>
-                        <li>Développement de storytelling de marque</li>
-                        <li>Création d'identités visuelles cohérentes</li>
+    <section class="py-20 px-4 bg-gradient-to-b from-[#0a1a2a] to-[#0a0e14]">
+        <div class="container mx-auto max-w-7xl px-4">
+            <!-- Service 1 -->
+            <div class="service-card group" id="branding">
+                <div class="service-content" data-aos="fade-right">
+                    <div class="service-icon bg-gradient-to-br from-amber-500/20 to-amber-500/5 border border-amber-500/20">
+                        <i data-feather="award" class="text-amber-400"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Stratégie de marque & identité visuelle</h2>
+                    <p class="text-lg text-gray-300 mb-6">Nous élaborons des récits de marque uniques et des identités visuelles mémorables qui différencient votre entreprise sur le marché.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-amber-400 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Conception de logos et chartes graphiques</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-amber-400 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Développement de storytelling de marque</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-amber-400 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Création d'identités visuelles cohérentes</span>
+                        </li>
                     </ul>
+                    <a href="#contact" class="inline-flex items-center text-amber-400 hover:text-amber-300 transition-colors">
+                        En savoir plus
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
                 </div>
-                <div data-aos="fade-left">
-                    <img src="http://static.photos/abstract/640x360/1" alt="Stratégie de marque" class="rounded-xl">
+                <div class="service-visual" data-aos="fade-left">
+                    <div class="visual-container bg-gradient-to-br from-amber-500/10 to-amber-500/5 border border-amber-500/10">
+                        <div class="grid grid-cols-2 gap-4 p-6">
+                            <div class="aspect-square bg-amber-500/10 rounded-lg flex items-center justify-center">
+                                <i data-feather="feather" class="w-10 h-10 text-amber-400"></i>
+                            </div>
+                            <div class="aspect-square bg-amber-500/5 rounded-lg flex items-center justify-center">
+                                <i data-feather="type" class="w-10 h-10 text-amber-300"></i>
+                            </div>
+                            <div class="aspect-square bg-amber-500/5 rounded-lg flex items-center justify-center">
+                                <i data-feather="palette" class="w-10 h-10 text-amber-300"></i>
+                            </div>
+                            <div class="aspect-square bg-amber-500/10 rounded-lg flex items-center justify-center">
+                                <i data-feather="layers" class="w-10 h-10 text-amber-400"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-                <div data-aos="fade-right" class="md:order-2">
-                    <img src="http://static.photos/technology/640x360/2" alt="Marketing digital" class="rounded-xl">
-                </div>
-                <div data-aos="fade-left" class="md:order-1">
-                    <h2 class="text-3xl font-bold mb-4">Marketing digital & campagnes publicitaires</h2>
-                    <p class="text-lg mb-6">Nos stratégies digitales basées sur l'analyse de données génèrent des résultats tangibles pour votre entreprise.</p>
-                    <ul class="list-disc pl-6 space-y-2">
-                        <li>Gestion des réseaux sociaux</li>
-                        <li>Création de campagnes publicitaires ciblées</li>
-                        <li>Analyse et optimisation des performances</li>
+            <!-- Service 2 -->
+            <div class="service-card group" id="digital">
+                <div class="service-content" data-aos="fade-right">
+                    <div class="service-icon bg-gradient-to-br from-blue-500/20 to-blue-500/5 border border-blue-500/20">
+                        <i data-feather="bar-chart-2" class="text-blue-400"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Marketing digital & campagnes publicitaires</h2>
+                    <p class="text-lg text-gray-300 mb-6">Nos stratégies digitales basées sur l'analyse de données génèrent des résultats tangibles pour votre entreprise.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-blue-400 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Gestion des réseaux sociaux</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-blue-400 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Création de campagnes publicitaires ciblées</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-blue-400 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Analyse et optimisation des performances</span>
+                        </li>
                     </ul>
+                    <a href="#contact" class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors">
+                        En savoir plus
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                <div class="service-visual" data-aos="fade-left">
+                    <div class="visual-container bg-gradient-to-br from-blue-500/10 to-blue-500/5 border border-blue-500/10">
+                        <div class="grid grid-cols-3 gap-3 p-6">
+                            <div class="aspect-square bg-blue-500/10 rounded-lg flex items-center justify-center">
+                                <i data-feather="trending-up" class="w-8 h-8 text-blue-400"></i>
+                            </div>
+                            <div class="aspect-square bg-blue-500/5 rounded-lg flex items-center justify-center">
+                                <i data-feather="target" class="w-8 h-8 text-blue-300"></i>
+                            </div>
+                            <div class="aspect-square bg-blue-500/10 rounded-lg flex items-center justify-center">
+                                <i data-feather="users" class="w-8 h-8 text-blue-400"></i>
+                            </div>
+                            <div class="aspect-square bg-blue-500/5 rounded-lg flex items-center justify-center">
+                                <i data-feather="pie-chart" class="w-8 h-8 text-blue-300"></i>
+                            </div>
+                            <div class="aspect-square bg-blue-500/10 rounded-lg flex items-center justify-center">
+                                <i data-feather="dollar-sign" class="w-8 h-8 text-blue-400"></i>
+                            </div>
+                            <div class="aspect-square bg-blue-500/5 rounded-lg flex items-center justify-center">
+                                <i data-feather="filter" class="w-8 h-8 text-blue-300"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-                <div data-aos="fade-right">
-                    <h2 class="text-3xl font-bold mb-4">Conception & développement web</h2>
-                    <p class="text-lg mb-6">Nous créons des sites web fluides, intuitifs et captivants qui convertissent vos visiteurs en clients.</p>
-                    <ul class="list-disc pl-6 space-y-2">
-                        <li>Sites vitrines et e-commerce</li>
-                        <li>Design responsive et UX/UI</li>
-                        <li>Développement sur mesure</li>
+            <!-- Service 3 -->
+            <div class="service-card group">
+                <div class="service-content" data-aos="fade-right">
+                    <div class="service-icon bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/20">
+                        <i data-feather="globe" class="text-purple-400"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Conception & développement web</h2>
+                    <p class="text-lg text-gray-300 mb-6">Nous créons des sites web fluides, intuitifs et captivants qui convertissent vos visiteurs en clients.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-purple-400 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Sites vitrines et e-commerce</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-purple-400 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Design responsive et UX/UI</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-purple-400 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Développement sur mesure</span>
+                        </li>
                     </ul>
+                    <a href="#contact" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+                        En savoir plus
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
                 </div>
-                <div data-aos="fade-left">
-                    <img src="http://static.photos/workspace/640x360/3" alt="Développement web" class="rounded-xl">
+                <div class="service-visual" data-aos="fade-left">
+                    <div class="visual-container bg-gradient-to-br from-purple-500/10 to-purple-500/5 border border-purple-500/10">
+                        <div class="relative h-full p-6">
+                            <div class="absolute inset-0 flex items-center justify-center opacity-20">
+                                <i data-feather="monitor" class="w-32 h-32 text-purple-400"></i>
+                            </div>
+                            <div class="relative z-10 grid grid-cols-2 gap-4">
+                                <div class="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20 backdrop-blur-sm">
+                                    <i data-feather="smartphone" class="w-6 h-6 text-purple-300 mb-2"></i>
+                                    <div class="h-2 bg-purple-500/20 rounded-full mb-1"></div>
+                                    <div class="h-2 bg-purple-500/30 rounded-full w-3/4"></div>
+                                </div>
+                                <div class="bg-purple-500/5 rounded-lg p-4 border border-purple-500/10 backdrop-blur-sm">
+                                    <i data-feather="tablet" class="w-6 h-6 text-purple-300 mb-2"></i>
+                                    <div class="h-2 bg-purple-500/20 rounded-full mb-1"></div>
+                                    <div class="h-2 bg-purple-500/30 rounded-full"></div>
+                                </div>
+                                <div class="bg-purple-500/5 rounded-lg p-4 border border-purple-500/10 backdrop-blur-sm">
+                                    <i data-feather="layout" class="w-6 h-6 text-purple-300 mb-2"></i>
+                                    <div class="h-2 bg-purple-500/20 rounded-full mb-1"></div>
+                                    <div class="h-2 bg-purple-500/30 rounded-full w-5/6"></div>
+                                </div>
+                                <div class="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20 backdrop-blur-sm">
+                                    <i data-feather="shopping-cart" class="w-6 h-6 text-purple-300 mb-2"></i>
+                                    <div class="h-2 bg-purple-500/20 rounded-full mb-1"></div>
+                                    <div class="h-2 bg-purple-500/30 rounded-full w-2/3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-                <div data-aos="fade-right" class="md:order-2">
-                    <img src="http://static.photos/abstract/640x360/4" alt="Motion design" class="rounded-xl">
-                </div>
-                <div data-aos="fade-left" class="md:order-1">
-                    <h2 class="text-3xl font-bold mb-4">Motion design & production vidéo</h2>
-                    <p class="text-lg mb-6">Nos contenus animés et vidéos promotionnelles captivent votre audience avec un style créatif unique.</p>
-                    <ul class="list-disc pl-6 space-y-2">
-                        <li>Animations explicatives</li>
-                        <li>Vidéos promotionnelles</li>
-                        <li>Contenu social media dynamique</li>
+            <!-- Service 4 -->
+            <div class="service-card group" id="creation">
+                <div class="service-content" data-aos="fade-right">
+                    <div class="service-icon bg-gradient-to-br from-pink-500/20 to-pink-500/5 border border-pink-500/20">
+                        <i data-feather="film" class="text-pink-400"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Motion design & production vidéo</h2>
+                    <p class="text-lg text-gray-300 mb-6">Nos contenus animés et vidéos promotionnelles captivent votre audience avec un style créatif unique.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-pink-400 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Animations explicatives</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-pink-400 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Vidéos promotionnelles</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-pink-400 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Contenu social media dynamique</span>
+                        </li>
                     </ul>
+                    <a href="#contact" class="inline-flex items-center text-pink-400 hover:text-pink-300 transition-colors">
+                        En savoir plus
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+                <div class="service-visual" data-aos="fade-left">
+                    <div class="visual-container bg-gradient-to-br from-pink-500/10 to-pink-500/5 border border-pink-500/10">
+                        <div class="relative h-full p-6">
+                            <div class="absolute inset-0 flex items-center justify-center opacity-10">
+                                <i data-feather="film" class="w-40 h-40 text-pink-400"></i>
+                            </div>
+                            <div class="relative z-10">
+                                <div class="aspect-video bg-pink-500/10 rounded-lg border border-pink-500/20 mb-4 overflow-hidden">
+                                    <div class="h-full flex items-center justify-center">
+                                        <div class="text-center">
+                                            <i data-feather="play-circle" class="w-12 h-12 text-pink-400 mx-auto mb-2"></i>
+                                            <span class="text-sm text-pink-300">Aperçu vidéo</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <div class="h-1.5 bg-pink-500/30 rounded-full flex-1"></div>
+                                    <div class="h-1.5 bg-pink-500/20 rounded-full w-1/4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <h2 class="text-3xl font-bold mb-4">Modélisation 3D & expériences interactives</h2>
-                    <p class="text-lg mb-6">Plongez votre audience dans des expériences immersives grâce à nos visuels 3D et technologies VR/AR.</p>
-                    <ul class="list-disc pl-6 space-y-2">
-                        <li>Modélisation 3D de produits</li>
-                        <li>Expériences de réalité virtuelle</li>
-                        <li>Applications interactives innovantes</li>
+            <!-- Service 5 -->
+            <div class="service-card group">
+                <div class="service-content" data-aos="fade-right">
+                    <div class="service-icon bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 border border-cyan-500/20">
+                        <i data-feather="box" class="text-cyan-400"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Modélisation 3D & expériences interactives</h2>
+                    <p class="text-lg text-gray-300 mb-6">Plongez votre audience dans des expériences immersives grâce à nos visuels 3D et technologies VR/AR.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-cyan-400 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Modélisation 3D de produits</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-cyan-400 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Expériences de réalité virtuelle</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check-circle" class="w-5 h-5 text-cyan-400 mr-2 mt-1 flex-shrink-0"></i>
+                            <span>Applications interactives innovantes</span>
+                        </li>
                     </ul>
+                    <a href="#contact" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors">
+                        En savoir plus
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
                 </div>
-                <div data-aos="fade-left">
-                    <img src="http://static.photos/technology/640x360/5" alt="3D & VR" class="rounded-xl">
+                <div class="service-visual" data-aos="fade-left">
+                    <div class="visual-container bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 border border-cyan-500/10">
+                        <div class="relative h-full p-6">
+                            <div class="absolute inset-0 flex items-center justify-center opacity-10">
+                                <i data-feather="box" class="w-48 h-48 text-cyan-400"></i>
+                            </div>
+                            <div class="relative z-10">
+                                <div class="aspect-square bg-cyan-500/10 rounded-lg border border-cyan-500/20 mb-4 overflow-hidden flex items-center justify-center">
+                                    <div class="relative w-32 h-32">
+                                        <div class="absolute inset-0 bg-cyan-500/20 rounded-full animate-pulse"></div>
+                                        <div class="absolute inset-2 bg-cyan-500/10 rounded-full animate-pulse" style="animation-delay: 0.2s"></div>
+                                        <div class="absolute inset-4 bg-cyan-500/5 rounded-full animate-pulse" style="animation-delay: 0.4s"></div>
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <i data-feather="box" class="w-12 h-12 text-cyan-400"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <div class="h-1.5 bg-cyan-500/30 rounded-full flex-1"></div>
+                                    <div class="h-1.5 bg-cyan-500/20 rounded-full w-1/4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-20 px-4 bg-gray-900">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Prêt à transformer votre marque ?</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">Contactez-nous pour discuter de votre projet et découvrir comment nous pouvons vous aider à atteindre vos objectifs.</p>
-            <a href="contact.html" class="bg-gold text-black px-8 py-3 rounded-full font-bold hover:bg-opacity-90 smooth-transition" data-aos="fade-up" data-aos-delay="400">Discutons de votre projet</a>
+    <section class="relative py-24 px-4 bg-gradient-to-b from-[#0a0e14] to-[#0a1a2a] overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-1/4 left-1/4 w-60 h-60 bg-gold rounded-full mix-blend-soft-light filter blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-electric-blue rounded-full mix-blend-soft-light filter blur-3xl"></div>
+        </div>
+        <div class="container mx-auto max-w-4xl relative z-10 text-center" data-aos="fade-up">
+            <div class="bg-gradient-to-br from-gray-900/80 to-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-12 shadow-2xl">
+                <span class="inline-block px-4 py-1 mb-6 text-sm font-semibold tracking-wider text-gold uppercase rounded-full bg-gold/10">Commençons</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                    Prêt à transformer votre marque ?
+                </h2>
+                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Contactez-nous pour discuter de votre projet et découvrir comment nous pouvons vous aider à atteindre vos objectifs.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="contact.html" class="px-8 py-4 bg-gold text-gray-900 font-bold rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2">
+                        <i data-feather="message-circle" class="w-5 h-5"></i>
+                        <span>Discutons de votre projet</span>
+                    </a>
+                    <a href="tel:+212600000000" class="px-8 py-4 border border-gray-700 text-gray-300 font-medium rounded-full hover:bg-gray-800/50 transition-all duration-300 flex items-center justify-center space-x-2">
+                        <i data-feather="phone" class="w-5 h-5"></i>
+                        <span>+212 6 00 00 00 00</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 px-4 bg-black">
+    <footer class="py-12 px-4 bg-[#0a0e14] border-t border-gray-800/50">
         <div class="container mx-auto text-center">
             <p>&copy; 2023 Ads-Studio Agency. Tous droits réservés.</p>
             <div class="mt-4">
