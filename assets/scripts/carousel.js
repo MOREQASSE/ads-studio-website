@@ -5,11 +5,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.querySelector('.carousel-arrow.left-0');
     const nextBtn = document.querySelector('.carousel-arrow.right-0');
     
-    let currentIndex = 0;
-    let isMobile = window.innerWidth <= 768; // Check if mobile device
-    let activeSlideIndex = null; // Track which slide is currently active on mobile
-    const slideCount = slides.length - 1; // Account for duplicate slide
-    const slideWidth = slides[0].offsetWidth + 32; // width + gap (2rem = 32px)
+    // Use original slides without cloning
+    const allSlides = document.querySelectorAll('.client-logo');
+    const slideCount = allSlides.length;
+    
+    let currentIndex = 0; // Start at the first slide
+    let isMobile = window.innerWidth <= 768;
+    let activeSlideIndex = null;
+    let isAnimating = false;
+    const slideWidth = allSlides[0].offsetWidth + 32; // width + gap (2rem = 32px)
+    
+    // Set initial position to show the first real slide
+    track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
     
     // Set initial position
     updateCarousel();
@@ -33,11 +40,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Navigation functions
     function nextSlide() {
+        if (isAnimating) return;
+        isAnimating = true;
         currentIndex++;
         updateCarousel();
     }
     
     function prevSlide() {
+        if (isAnimating) return;
+        isAnimating = true;
         currentIndex--;
         updateCarousel();
     }
@@ -48,35 +59,51 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function updateCarousel() {
-        const actualSlideCount = slideCount / 2; // Since we duplicate the slides for infinite effect
-        
-        // If we're at the last slide (which is a duplicate of the first), reset without animation
-        if (currentIndex >= slideCount) {
-            currentIndex = 0;
-            track.style.transition = 'none';
-            track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
-            // Force reflow
-            track.offsetHeight;
-        }
-        // If we're at the first slide and going backwards, jump to the duplicate at the end
-        else if (currentIndex < 0) {
-            currentIndex = slideCount - 1;
-            track.style.transition = 'none';
-            track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
-            // Force reflow
-            track.offsetHeight;
-        }
-        
-        // Apply the transition and move to the current slide
-        track.style.transition = currentIndex === 0 || currentIndex >= slideCount - 1 ? 'none' : 'transform 0.5s ease';
+        // Apply smooth transition for all slides
+        track.style.transition = 'transform 0.5s ease-in-out';
         track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
         
-        // Update active dot - use modulo to get the correct dot index
+        // Check if we need to loop around
+        const isAtBoundary = currentIndex <= 0 || currentIndex >= slideCount;
+        
+        if (isAtBoundary) {
+            track.addEventListener('transitionend', handleTransitionEnd, { once: true });
+        } else {
+            // Reset animation flag when not at boundary
+            setTimeout(() => {
+                isAnimating = false;
+            }, 500); // Match this with the transition duration
+        }
+        
         updateDots();
     }
     
+    function handleTransitionEnd() {
+        // Disable transitions for the reset
+        track.style.transition = 'none';
+        
+        if (currentIndex >= slideCount) {
+            // Loop back to the first slide
+            currentIndex = 0;
+            track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+        } else if (currentIndex < 0) {
+            // Loop to the last slide
+            currentIndex = slideCount - 1;
+            track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+        }
+        
+        // Force reflow to ensure the transform is applied
+        track.offsetHeight;
+        
+        // Re-enable transitions
+        track.style.transition = 'transform 0.5s ease-in-out';
+        isAnimating = false;
+    }
+    
     function updateDots() {
-        const actualIndex = currentIndex % (dots.length);
+        const actualIndex = currentIndex % (slides.length);
+        
+        // Update dots
         dots.forEach((dot, index) => {
             if (index === actualIndex) {
                 dot.classList.add('bg-gold');
@@ -84,6 +111,23 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 dot.classList.remove('bg-gold');
                 dot.classList.add('bg-gray-700');
+            }
+        });
+        
+        // Update active slide appearance
+        const allSlides = document.querySelectorAll('.client-logo');
+        allSlides.forEach((slide, index) => {
+            const img = slide.querySelector('img');
+            const overlay = slide.querySelector('.client-overlay');
+            
+            if (index === currentIndex) {
+                // Show details and color for active slide
+                img.classList.remove('grayscale');
+                if (overlay) overlay.classList.add('mobile-active');
+            } else {
+                // Hide details and grayscale for inactive slides
+                img.classList.add('grayscale');
+                if (overlay) overlay.classList.remove('mobile-active');
             }
         });
     }
@@ -141,23 +185,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Add click handler to each slide for mobile
-    slides.forEach((slide, index) => {
-        slide.addEventListener('click', (e) => {
-            if (isMobile) {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleSlideDetails(index);
-            }
+    // Make sure only arrows and dots are clickable for navigation
+    const arrows = document.querySelectorAll('.carousel-arrow');
+    arrows.forEach(arrow => {
+        arrow.style.pointerEvents = 'auto';
+    });
+    
+    // Handle dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', (e) => {
+            e.stopPropagation();
+            goToSlide(index);
         });
-        
-        // Prevent click on the slide from propagating to parent elements
-        slide.addEventListener('mousedown', (e) => {
-            if (isMobile) {
-                e.preventDefault();
-                e.stopPropagation();
-            }
-        });
+    });
+    
+    // Remove any existing click handlers from slides
+    slides.forEach((slide) => {
+        // Clone the slide to remove all event listeners
+        const newSlide = slide.cloneNode(true);
+        slide.parentNode.replaceChild(newSlide, slide);
     });
     
     dots.forEach((dot, index) => {

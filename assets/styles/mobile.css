@@ -5,9 +5,20 @@
     .client-logo {
         padding: 0 10px; /* Maintain horizontal spacing */
         position: relative;
-        cursor: pointer;
+        cursor: default; /* Remove pointer cursor */
         -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
-        touch-action: manipulation; /* Improve touch response */
+        touch-action: pan-y; /* Only allow vertical touch scrolling */
+        pointer-events: none; /* Disable pointer events by default */
+    }
+    
+    /* Enable pointer events for container but prevent navigation */
+    .client-logo .logo-container {
+        pointer-events: auto;
+    }
+    
+    /* Make sure images don't interfere with clicks */
+    .client-logo img {
+        pointer-events: none;
     }
     
     .logo-container {
@@ -50,8 +61,12 @@
         margin-top: 5px;
     }
     
-    /* Show grayscale when overlay is active */
-    .mobile-active + img {
+    /* Active slide styling */
+    .client-logo img {
+        transition: filter 0.3s ease;
+    }
+    
+    .client-logo img:not(.grayscale) {
         filter: grayscale(0) !important;
     }
     
