@@ -96,6 +96,240 @@ header nav a.border-gold:hover:before {
     width: 80%;
 }
 
+/* ===== Client Carousel Styles ===== */
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.client-logo {
+    flex: 0 0 calc(33.333% - 1.33rem);
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.logo-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.logo-container:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto;
+    transition: all 0.4s ease;
+    filter: grayscale(100%) brightness(0.8);
+    opacity: 0.8;
+}
+
+.logo-container:hover img {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.client-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    padding: 2rem 1.5rem 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-align: left;
+}
+
+.client-overlay h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.client-overlay p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.logo-container:hover .client-overlay {
+    transform: translateY(0);
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.carousel-arrow:hover {
+    background: #D4AF37;
+    color: #000;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.left-0 {
+    left: -24px;
+}
+
+.right-0 {
+    right: -24px;
+}
+
+.group:hover .carousel-arrow {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Social Media Icons */
+.social-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease, transform 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-container i {
+    color: white;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.icon-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover .icon-container {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon:hover .icon-container::before {
+    opacity: 1;
+}
+
+.social-icon:hover .icon-container i {
+    transform: scale(1.2);
+}
+
+/* Carousel Dots Navigation */
+.carousel-dots {
+    position: relative;
+    z-index: 10;
+}
+
+.carousel-dots button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.carousel-dots button:hover {
+    background-color: #D4AF37;
+    transform: scale(1.2);
+}
+
+.carousel-dots button.bg-gold,
+.carousel-dots button.active {
+    background-color: #D4AF37 !important;
+    transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .client-logo {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 640px) {
+    .client-logo {
+        flex: 0 0 100%;
+    }
+    
+    .carousel-arrow {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .left-0 {
+        left: 10px;
+    }
+    
+    .right-0 {
+        right: 10px;
+    }
+}
+
 /* Hover effect */
 header nav a:after {
     content: '';
