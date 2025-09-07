@@ -315,29 +315,7 @@ margin-bottom: 0;
 }
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-.expertise-card {
-margin-bottom: 1.5rem;
-}
 
-.expertise-card-inner {
-transform: none !important;
-}
-
-.expertise-card-back {
-position: relative;
-transform: none;
-opacity: 1 !important;
-margin-top: 1rem;
-border-radius: 0.5rem;
-height: auto;
-}
-
-.expertise-card:hover .expertise-card-inner {
-transform: none !important;
-}
-}
 
 /* Animations */
 @keyframes float {
