@@ -273,25 +273,60 @@
     </section>
 
     <!-- Ce qui nous distingue -->
-    <section class="py-20 px-4 bg-gray-900 snap-section">
+    <section class="py-20 px-4 bg-gray-900 snap-section relative distinction-section overflow-hidden">
         <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Ce qui nous distingue</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center" data-aos="fade-up">
-                    <i data-feather="zap" class="text-4xl mb-4 gold-text"></i>
-                    <h3 class="text-xl font-bold mb-2">L’innovation au cœur de notre ADN</h3>
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-1 mb-4 text-sm font-semibold tracking-wider text-gold uppercase rounded-full bg-gold/10">Notre Différence</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Ce Qui Nous Rend Uniques</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Découvrez les piliers qui soutiennent notre excellence et notre créativité.</p>
+            </div>
+
+            <div class="relative min-h-[600px] w-full max-w-4xl mx-auto flex items-center justify-center" data-aos="fade-in" data-aos-duration="1000">
+                <!-- Centerpiece -->
+                <div class="absolute w-48 h-48 bg-gradient-to-br from-gold/10 to-electric-blue/10 rounded-full flex items-center justify-center animate-pulse">
+                    <div class="w-32 h-32 bg-gray-900 rounded-full flex items-center justify-center">
+                        <i data-feather="star" class="text-4xl text-gold"></i>
+                    </div>
                 </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-                    <i data-feather="heart" class="text-4xl mb-4 electric-blue-text"></i>
-                    <h3 class="text-xl font-bold mb-2">Une approche centrée sur le client</h3>
-                </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                    <i data-feather="bar-chart-2" class="text-4xl mb-4 gold-text"></i>
-                    <h3 class="text-xl font-bold mb-2">Des résultats mesurables</h3>
-                </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-                    <i data-feather="layers" class="text-4xl mb-4 electric-blue-text"></i>
-                    <h3 class="text-xl font-bold mb-2">Une agence intégrée : de l’idée à la réalisation</h3>
+
+                <!-- Orbiting Items -->
+                <div class="orbit-container">
+                    <div class="orbit-item" style="--orbit-radius: 240px; --start-angle: 0deg; --orbit-speed: 30s;">
+                        <div class="feature-orb" tabindex="0">
+                            <div class="feature-content">
+                                <div class="icon-wrapper bg-gold/10"><i data-feather="zap" class="text-3xl text-gold"></i></div>
+                                <h3 class="text-lg font-bold text-white">Innovation au Cœur</h3>
+                                <p class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Nous repoussons les limites avec des idées audacieuses et des technologies de pointe.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="orbit-item" style="--orbit-radius: 240px; --start-angle: 90deg; --orbit-speed: 30s;">
+                        <div class="feature-orb" tabindex="0">
+                            <div class="feature-content">
+                                <div class="icon-wrapper bg-electric-blue/10"><i data-feather="heart" class="text-3xl text-electric-blue"></i></div>
+                                <h3 class="text-lg font-bold text-white">Approche Client</h3>
+                                <p class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Votre succès est notre priorité. Nous collaborons étroitement pour atteindre vos objectifs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="orbit-item" style="--orbit-radius: 240px; --start-angle: 180deg; --orbit-speed: 30s;">
+                        <div class="feature-orb" tabindex="0">
+                            <div class="feature-content">
+                                <div class="icon-wrapper bg-gold/10"><i data-feather="bar-chart-2" class="text-3xl text-gold"></i></div>
+                                <h3 class="text-lg font-bold text-white">Résultats Mesurables</h3>
+                                <p class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Nous nous concentrons sur des stratégies qui génèrent un impact quantifiable et un ROI clair.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="orbit-item" style="--orbit-radius: 240px; --start-angle: 270deg; --orbit-speed: 30s;">
+                        <div class="feature-orb" tabindex="0">
+                            <div class="feature-content">
+                                <div class="icon-wrapper bg-electric-blue/10"><i data-feather="layers" class="text-3xl text-electric-blue"></i></div>
+                                <h3 class="text-lg font-bold text-white">Agence Intégrée</h3>
+                                <p class="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">De la conception à la mise en œuvre, nous gérons chaque étape de votre projet en interne.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -139,3 +139,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial check in case elements are already in view
     animateOnScroll();
 });
+
+// Orbiting Features Animation Pause
+const orbitContainer = document.querySelector('.orbit-container');
+if (orbitContainer) {
+    const orbitItems = orbitContainer.querySelectorAll('.orbit-item');
+    orbitContainer.addEventListener('mouseenter', () => {
+        orbitItems.forEach(item => {
+            item.style.animationPlayState = 'paused';
+        });
+    });
+    orbitContainer.addEventListener('mouseleave', () => {
+        orbitItems.forEach(item => {
+            item.style.animationPlayState = 'running';
+        });
+    });
+}

@@ -34,6 +34,12 @@ body {
     padding: 6rem 0;
 }
 
+.snap-section.distinction-section {
+    padding-bottom: 300px; /* Increased padding to avoid cropping */
+    z-index: 10; /* Ensure this section is above the next one */
+    position: relative;
+}
+
 /* Logo Slider */
 .logo-slide {
     animation: slide 20s linear infinite;
@@ -359,9 +365,9 @@ margin-bottom: 0;
 }
 /* Orbit Animation */
 @keyframes orbit {
-    from { transform: rotate(var(--start-angle)) translateX(calc(var(--orbit-radius) / 1.5)) rotate(calc(-1 * var(--start-angle))); }
-    to { transform: rotate(calc(360deg + var(--start-angle))) translateX(calc(var(--orbit-radius) / 1.5)) rotate(calc(-360deg - var(--start-angle))); }
-  }
+    from { transform: rotate(var(--start-angle)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--start-angle))); }
+    to { transform: rotate(calc(360deg + var(--start-angle))) translateX(var(--orbit-radius)) rotate(calc(-360deg - var(--start-angle))); }
+}
   
   @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -369,26 +375,31 @@ margin-bottom: 0;
   }
   
   /* Feature Orb Styles */
+  .orbit-container:hover .orbit-item {
+    animation-play-state: paused;
+  }
+
   .orbit-item {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 240px; /* Orb size */
+    height: 240px; /* Orb size */
     animation: orbit var(--orbit-speed, 40s) linear infinite;
     animation-play-state: running;
-    transform-origin: center;
   }
   
   .feature-orb {
-    width: 240px;
-    height: 240px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(30, 30, 30, 0.7);
     backdrop-filter: blur(10px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     cursor: pointer;
@@ -444,22 +455,27 @@ margin-bottom: 0;
   
   /* Responsive adjustments */
   @media (max-width: 1024px) {
+    .orbit-container {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        transform: scale(0.9);
+    }
+
     .orbit-item {
-      position: static;
-      animation: none;
-      margin: 2rem auto;
-      max-width: 300px;
+        width: 220px;
+        height: 220px;
     }
-  
-    .feature-orb {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 1;
-      padding: 1.5rem;
-    }
-  
+
     .feature-content p {
-      opacity: 1 !important;
+        opacity: 1 !important;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .orbit-container {
+        transform: scale(0.7);
     }
   }
   
