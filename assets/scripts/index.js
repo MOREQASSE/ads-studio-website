@@ -27,6 +27,66 @@ if (document.getElementById('vanta')) {
     });
 }
 
+// Comparison Table Interaction
+document.addEventListener('DOMContentLoaded', function() {
+    // Feature Rows Click Handler
+    const featureRows = document.querySelectorAll('.feature-row');
+    const featureDescription = document.getElementById('feature-description');
+    
+    featureRows.forEach(row => {
+        row.addEventListener('click', function() {
+            // Remove active class from all rows
+            featureRows.forEach(r => r.classList.remove('active'));
+            
+            // Add active class to clicked row
+            this.classList.add('active');
+            
+            // Update description
+            const description = this.getAttribute('data-desc');
+            featureDescription.innerHTML = `<p class="text-center">${description}</p>`;
+            
+            // Add animation class
+            featureDescription.style.animation = 'none';
+            void featureDescription.offsetWidth; // Trigger reflow
+            featureDescription.style.animation = 'fadeIn 0.3s ease-out';
+        });
+    });
+    
+    // Animated Counter
+    function animateCounter() {
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // The lower the faster
+        
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const increment = target / speed;
+            
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(animateCounter, 1);
+            } else {
+                counter.innerText = target;
+            }
+        });
+    }
+    
+    // Initialize counter when scrolled to section
+    const statSection = document.querySelector('.stat-card');
+    if (statSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(statSection);
+    }
+});
+
 // Initialize AOS (Animate On Scroll)
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize AOS with custom settings

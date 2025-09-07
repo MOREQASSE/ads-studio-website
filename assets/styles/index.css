@@ -363,32 +363,136 @@ margin-bottom: 0;
 .bg-electric-gradient {
     background: linear-gradient(135deg, var(--electric-blue) 0%, #0096C7 100%);
 }
-/* Orbit Animation */
-@keyframes orbit {
-    from { transform: rotate(var(--start-angle)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--start-angle))); }
-    to { transform: rotate(calc(360deg + var(--start-angle))) translateX(var(--orbit-radius)) rotate(calc(-360deg - var(--start-angle))); }
+/* Comparison Table Styles */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
 }
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-  }
-  
-  /* Feature Orb Styles */
-  .orbit-container:hover .orbit-item {
-    animation-play-state: paused;
-  }
 
-  .orbit-item {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 240px; /* Orb size */
-    height: 240px; /* Orb size */
-    animation: orbit var(--orbit-speed, 40s) linear infinite;
-    animation-play-state: running;
-  }
+.comparison-table th,
+.comparison-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-table th {
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+
+.comparison-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.feature-row {
+    transition: all 0.3s ease;
+}
+
+.feature-row:hover {
+    transform: translateX(5px);
+}
+
+.feature-row.active {
+    background-color: rgba(212, 175, 55, 0.1) !important;
+    border-left: 3px solid var(--gold);
+}
+
+/* Stat Cards */
+.stat-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card i {
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover i {
+    transform: scale(1.2);
+}
+
+/* Feature Description */
+#feature-description {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#feature-description p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Counter Animation */
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.counter {
+    display: inline-block;
+    animation: countUp 0.5s ease-out forwards;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .comparison-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .stat-card {
+        min-height: 150px;
+    }
+    
+    .stat-card .text-4xl {
+        font-size: 1.75rem;
+    }
+}
+
+/* Hover Effects */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c9a227;
+}
   
   .feature-orb {
     width: 100%;
@@ -455,17 +559,9 @@ margin-bottom: 0;
   
   /* Responsive adjustments */
   @media (max-width: 1024px) {
-    .orbit-container {
-        position: relative;
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-        transform: scale(0.9);
-    }
-
     .orbit-item {
-        width: 220px;
-        height: 220px;
+        width: 180px;
+        height: 180px;
     }
 
     .feature-content p {
@@ -474,8 +570,23 @@ margin-bottom: 0;
   }
 
   @media (max-width: 767px) {
-    .orbit-container {
-        transform: scale(0.7);
+    .orbit-item {
+        width: 150px;
+        height: 150px;
+    }
+
+    .feature-content {
+        padding: 1rem;
+    }
+
+    .feature-content .icon-wrapper {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0.5rem;
+    }
+
+    .feature-content h3 {
+        font-size: 1rem;
     }
   }
   
