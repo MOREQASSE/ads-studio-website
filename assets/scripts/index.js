@@ -8,22 +8,44 @@ window.addEventListener('load', function() {
 
 // Vanta.js Net Background
 if (document.getElementById('vanta')) {
-    VANTA.NET({
+    const isMobile = window.innerWidth <= 768; // Check if mobile device
+    
+    const vantaEffect = VANTA.NET({
         el: "#vanta",
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
+        minHeight: isMobile ? 100.00 : 200.00,
+        minWidth: isMobile ? 100.00 : 200.00,
+        scale: isMobile ? 0.8 : 1.00,
+        scaleMobile: isMobile ? 0.8 : 1.00,
         color: 0xd4af37,
         backgroundColor: 0x0,
-        points: 12.00,
-        maxDistance: 25.00,
-        spacing: 18.00,
+        points: isMobile ? 8.00 : 12.00,
+        maxDistance: isMobile ? 20.00 : 25.00,
+        spacing: isMobile ? 15.00 : 18.00,
         color2: 0x00b4d8,
         backgroundColor: 0x0a0a0a
+    });
+    
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            const newIsMobile = window.innerWidth <= 768;
+            if (vantaEffect) {
+                vantaEffect.setOptions({
+                    minHeight: newIsMobile ? 100.00 : 200.00,
+                    minWidth: newIsMobile ? 100.00 : 200.00,
+                    scale: newIsMobile ? 0.8 : 1.00,
+                    scaleMobile: newIsMobile ? 0.8 : 1.00,
+                    points: newIsMobile ? 8.00 : 12.00,
+                    maxDistance: newIsMobile ? 20.00 : 25.00,
+                    spacing: newIsMobile ? 15.00 : 18.00
+                });
+            }
+        }, 250);
     });
 }
 
