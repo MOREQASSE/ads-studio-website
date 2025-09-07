@@ -6,9 +6,9 @@ window.addEventListener('load', function() {
     }
 });
 
-// Vanta.js Globe Background
+// Vanta.js Net Background
 if (document.getElementById('vanta')) {
-    VANTA.GLOBE({
+    VANTA.NET({
         el: "#vanta",
         mouseControls: true,
         touchControls: true,
@@ -18,6 +18,10 @@ if (document.getElementById('vanta')) {
         scale: 1.00,
         scaleMobile: 1.00,
         color: 0xd4af37,
+        backgroundColor: 0x0,
+        points: 12.00,
+        maxDistance: 25.00,
+        spacing: 18.00,
         color2: 0x00b4d8,
         backgroundColor: 0x0a0a0a
     });
