@@ -4,6 +4,12 @@
 @media (max-width: 768px) {
     .client-logo {
         padding: 0 10px; /* Maintain horizontal spacing */
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .logo-container {
+        position: relative;
     }
     
     .logo-container img {
@@ -12,20 +18,47 @@
         max-height: 80px; /* Reduced height for mobile */
         object-fit: contain;
         aspect-ratio: 16/9; /* 16:9 aspect ratio */
+        transition: filter 0.3s ease;
     }
     
     .client-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
         padding: 8px;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        z-index: 10;
+        border-radius: 0 0 8px 8px;
+    }
+    
+    /* Active state for mobile overlay */
+    .client-overlay.mobile-active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    /* Show grayscale when overlay is active */
+    .mobile-active + img {
+        filter: grayscale(0) !important;
     }
     
     .client-overlay h3 {
         font-size: 0.9rem;
         margin-bottom: 2px;
+        color: #fff;
     }
     
     .client-overlay p {
         font-size: 0.7rem;
         margin: 0;
+        color: #ddd;
     }
 }
 

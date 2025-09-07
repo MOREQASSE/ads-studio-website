@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.querySelector('.carousel-arrow.right-0');
     
     let currentIndex = 0;
+    let isMobile = window.innerWidth <= 768; // Check if mobile device
+    let activeSlideIndex = null; // Track which slide is currently active on mobile
     const slideCount = slides.length - 1; // Account for duplicate slide
     const slideWidth = slides[0].offsetWidth + 32; // width + gap (2rem = 32px)
     
@@ -86,13 +88,67 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Event listeners
-    nextBtn.addEventListener('click', () => {
+    // Toggle slide details on mobile
+    function toggleSlideDetails(index) {
+        const slide = slides[index];
+        const overlay = slide.querySelector('.client-overlay');
+        
+        if (activeSlideIndex === index) {
+            // Clicking the active slide again hides the overlay
+            overlay.classList.remove('mobile-active');
+            activeSlideIndex = null;
+        } else {
+            // Hide any other active slide
+            if (activeSlideIndex !== null) {
+                const activeOverlay = slides[activeSlideIndex].querySelector('.client-overlay');
+                activeOverlay.classList.remove('mobile-active');
+            }
+            // Show clicked slide's overlay
+            overlay.classList.add('mobile-active');
+            activeSlideIndex = index;
+        }
+    }
+
+    // Close overlay when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.client-logo') && activeSlideIndex !== null) {
+            const activeOverlay = slides[activeSlideIndex].querySelector('.client-overlay');
+            activeOverlay.classList.remove('mobile-active');
+            activeSlideIndex = null;
+        }
+    });
+
+    // Event listeners for navigation
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         nextSlide();
+        // Close any open overlays when navigating
+        if (activeSlideIndex !== null) {
+            const activeOverlay = slides[activeSlideIndex].querySelector('.client-overlay');
+            activeOverlay.classList.remove('mobile-active');
+            activeSlideIndex = null;
+        }
     });
     
-    prevBtn.addEventListener('click', () => {
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         prevSlide();
+        // Close any open overlays when navigating
+        if (activeSlideIndex !== null) {
+            const activeOverlay = slides[activeSlideIndex].querySelector('.client-overlay');
+            activeOverlay.classList.remove('mobile-active');
+            activeSlideIndex = null;
+        }
+    });
+    
+    // Add click handler to each slide for mobile
+    slides.forEach((slide, index) => {
+        slide.addEventListener('click', (e) => {
+            if (isMobile) {
+                e.stopPropagation();
+                toggleSlideDetails(index);
+            }
+        });
     });
     
     dots.forEach((dot, index) => {
