@@ -107,25 +107,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Toggle the 'flipped' class on the inner element
-            if (inner.classList.contains('flipped')) {
-                inner.classList.remove('flipped');
-            } else {
-                // Close any other open cards first
-                document.querySelectorAll('.expertise-card-inner.flipped').forEach(flippedCard => {
-                    if (flippedCard !== inner) {
-                        flippedCard.classList.remove('flipped');
-                    }
-                });
-                inner.classList.add('flipped');
-            }
+            inner.classList.toggle('flipped');
         });
-        
-        // Close card when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!card.contains(e.target) && !e.target.closest('.expertise-card')) {
-                inner.classList.remove('flipped');
-            }
-        });
+    });
+
+    // Close all cards when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.expertise-card')) {
+            document.querySelectorAll('.expertise-card-inner.flipped').forEach(flippedCard => {
+                flippedCard.classList.remove('flipped');
+            });
+        }
     });
 
     // Add scroll-triggered animations
