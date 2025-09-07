@@ -6,10 +6,15 @@
         padding: 0 10px; /* Maintain horizontal spacing */
         position: relative;
         cursor: pointer;
+        -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+        touch-action: manipulation; /* Improve touch response */
     }
     
     .logo-container {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
     
     .logo-container img {
@@ -22,26 +27,27 @@
     }
     
     .client-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        position: relative;
         background: rgba(0, 0, 0, 0.8);
         color: white;
         padding: 8px;
-        transform: translateY(100%);
-        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
         transition: all 0.3s ease;
         pointer-events: none;
         z-index: 10;
         border-radius: 0 0 8px 8px;
+        margin-top: 0;
+        transform: translateY(-10px);
     }
     
     /* Active state for mobile overlay */
     .client-overlay.mobile-active {
+        max-height: 100px; /* Adjust based on your content */
         transform: translateY(0);
         opacity: 1;
         pointer-events: auto;
+        margin-top: 5px;
     }
     
     /* Show grayscale when overlay is active */

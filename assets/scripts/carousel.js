@@ -145,8 +145,17 @@ document.addEventListener('DOMContentLoaded', function() {
     slides.forEach((slide, index) => {
         slide.addEventListener('click', (e) => {
             if (isMobile) {
+                e.preventDefault();
                 e.stopPropagation();
                 toggleSlideDetails(index);
+            }
+        });
+        
+        // Prevent click on the slide from propagating to parent elements
+        slide.addEventListener('mousedown', (e) => {
+            if (isMobile) {
+                e.preventDefault();
+                e.stopPropagation();
             }
         });
     });
