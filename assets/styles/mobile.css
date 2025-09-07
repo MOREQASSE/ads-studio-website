@@ -1,5 +1,35 @@
 /* Mobile-specific styles for better mobile experience */
 
+/* Carousel image adjustments for mobile */
+@media (max-width: 768px) {
+    .client-logo {
+        padding: 0 10px; /* Maintain horizontal spacing */
+    }
+    
+    .logo-container img {
+        width: 100%;
+        height: auto;
+        max-height: 80px; /* Reduced height for mobile */
+        object-fit: contain;
+        aspect-ratio: 16/9; /* 16:9 aspect ratio */
+    }
+    
+    .client-overlay {
+        padding: 8px;
+    }
+    
+    .client-overlay h3 {
+        font-size: 0.9rem;
+        margin-bottom: 2px;
+    }
+    
+    .client-overlay p {
+        font-size: 0.7rem;
+        margin: 0;
+    }
+}
+
+
 /* Base mobile styles */
 @media (max-width: 768px) {
     /* Service card layout */

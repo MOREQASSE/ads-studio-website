@@ -81,11 +81,11 @@
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Projet 1 -->
-                <div class="portfolio-item rounded-xl overflow-hidden" data-aos="fade-up">
-                    <img src="http://static.photos/nature/640x360/1" alt="Projet 1" class="w-full h-64 object-cover">
-                    <div class="portfolio-overlay">
-                        <h3 class="text-2xl font-bold mb-2">Kitea Maroc</h3>
-                        <p>Identité visuelle & campagne digitale</p>
+                <div class="portfolio-item rounded-xl overflow-hidden group relative" data-aos="fade-up">
+                    <img src="images/kitea1.jpg" alt="Kitea Maroc" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Kitea Maroc</h3>
+                        <p class="text-gray-300">Stratégie digitale & Développement web</p>
                     </div>
                 </div>
                 <!-- Projet 2 -->
@@ -97,27 +97,27 @@
                     </div>
                 </div>
                 <!-- Projet 3 -->
-                <div class="portfolio-item rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <img src="http://static.photos/office/640x360/3" alt="Projet 3" class="w-full h-64 object-cover">
-                    <div class="portfolio-overlay">
-                        <h3 class="text-2xl font-bold mb-2">Cartoncom</h3>
-                        <p>Motion design & vidéo promotionnelle</p>
+                <div class="portfolio-item rounded-xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/cartoncom.png" alt="Cartoncom" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Cartoncom</h3>
+                        <p class="text-gray-300">Refonte de site web & SEO</p>
                     </div>
                 </div>
                 <!-- Projet 4 -->
-                <div class="portfolio-item rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                    <img src="http://static.photos/technology/640x360/4" alt="Projet 4" class="w-full h-64 object-cover">
-                    <div class="portfolio-overlay">
-                        <h3 class="text-2xl font-bold mb-2">Marostone</h3>
-                        <p>Modélisation 3D & réalité virtuelle</p>
+                <div class="portfolio-item rounded-xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="300">
+                    <img src="images/marostone2.jpeg" alt="Marostone" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Marostone</h3>
+                        <p class="text-gray-300">Modélisation 3D & réalité virtuelle</p>
                     </div>
                 </div>
                 <!-- Projet 5 -->
-                <div class="portfolio-item rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="400">
-                    <img src="http://static.photos/people/640x360/5" alt="Projet 5" class="w-full h-64 object-cover">
-                    <div class="portfolio-overlay">
-                        <h3 class="text-2xl font-bold mb-2">Tanger Med Port</h3>
-                        <p>Identité de marque & communication institutionnelle</p>
+                <div class="portfolio-item rounded-xl overflow-hidden group relative" data-aos="fade-up" data-aos-delay="400">
+                    <img src="images/tangermedport2.png" alt="Tanger Med Port" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="portfolio-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-2xl font-bold mb-2 text-white">Tanger Med Port</h3>
+                        <p class="text-gray-300">Application mobile & Solution digitale</p>
                     </div>
                 </div>
                 <!-- Projet 6 -->
@@ -142,12 +142,63 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 px-4 bg-black">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2023 Ads-Studio Agency. Tous droits réservés.</p>
-            <div class="mt-4">
-                <a href="#" class="mx-2 hover:gold-text smooth-transition">Mentions légales</a>
-                <a href="#" class="mx-2 hover:gold-text smooth-transition">Politique de confidentialité</a>
+    <footer class="bg-[#0a0e14] text-gray-300 pt-12 pb-8 px-4">
+        <div class="container mx-auto max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- About Section -->
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-bold text-white mb-4">Ads-Studio</h3>
+                    <p class="mb-4">Agence créative digitale à service complet, dédiée à la transformation des entreprises à travers des solutions numériques innovantes.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i data-feather="youtube" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-gold transition-colors">Accueil</a></li>
+                        <li><a href="services.html" class="hover:text-gold transition-colors">Services</a></li>
+                        <li><a href="portfolio.html" class="hover:text-gold transition-colors">Portfolio</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Contactez-nous</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="mail" class="w-5 h-5 mr-2 mt-0.5 text-gold"></i>
+                            <span>contact@adsstudio.ma</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="phone" class="w-5 h-5 mr-2 mt-0.5 text-gold"></i>
+                            <span>+212 6 12 34 56 78</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="w-5 h-5 mr-2 mt-0.5 text-gold"></i>
+                            <span>Casablanca, Maroc</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-6 mt-8 text-center">
+                <p class="text-sm">&copy; 2023 Ads-Studio Agency. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
